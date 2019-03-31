@@ -8,8 +8,10 @@ Created on Sun Mar 17 00:59:14 2019
 ##Install pymongo library sing pip or conda
 from pymongo import MongoClient
 
+#connect to the mongo server
 mongoClient = MongoClient("mongodb://localhost:27017/")
 
+#choose the database
 db = mongoClient["test_db"]
 
 print(mongoClient.list_database_names())
@@ -18,7 +20,7 @@ dbList = mongoClient.list_database_names()
 if "test_db" in dbList:
   print("The database exists.")
   
-  
+#choose the collection
 collection = db["test"]
 
 print(db.list_collection_names())
